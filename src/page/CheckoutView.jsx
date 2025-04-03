@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 import { Api } from '../api'
 import { clearCartItem } from '../features/cartSlice'
 import { redirect, useNavigate } from 'react-router-dom'
-import { toast, Toaster } from '.react-hot-toast'
+import { toast, Toaster } from 'react-hot-toast'
 
 const snapScript = () => {
     return new Promise((resolve) => {
