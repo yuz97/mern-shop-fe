@@ -2,7 +2,6 @@ import React from 'react'
 import FormSelect from '../components/Form/FormSelect'
 import FormInput from '../components/Form/FormInput'
 import FormTextArea from '../components/Form/FormTextArea'
-import { toast, Toaster } from 'react-hot-toast'
 import { useNavigate, redirect } from 'react-router-dom'
 import { Api } from '../api'
 
@@ -51,11 +50,9 @@ export default function CreateProductView() {
                 category: data.category,
                 image: responseFileUpload.data.url,
             })
-            toast.success("produk berhasil ditambahkan")
             navigate('/products')
         } catch (error) {
             const errMessage = error?.response?.data?.message;
-            toast.error(errMessage)
         }
     }
     return (
@@ -72,7 +69,6 @@ export default function CreateProductView() {
             <FormInput name="stock" label="stok produk" type="number" />
             <FormTextArea name="description" label="deskripsi produk" />
             <input type="submit" value="Tambah" className='btn btn-primary btn-block mt-5 btn-md' />
-            <Toaster position='top-center' />
         </form>
     )
 }

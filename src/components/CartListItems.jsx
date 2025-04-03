@@ -3,7 +3,6 @@ import { genSelectAmount, numberFormat } from '../utils'
 import { FaTrash } from 'react-icons/fa6'
 import { useDispatch } from 'react-redux'
 import { editItem, removeItem } from '../features/cartSlice'
-import toast, { Toaster } from 'react-hot-toast'
 
 export default function CartListItems(props) {
     const { cartItem } = props
@@ -13,12 +12,10 @@ export default function CartListItems(props) {
     const handleAmount = (e) => {
         e.preventDefault()
         dispatch(editItem({ cartId, amount: parseInt(e.target.value) }))
-        toast.success("data product berhasil diupdate")
     }
 
     const handleRemoveItem = () => {
         dispatch(removeItem({ cartId }))
-        toast.error("data product berhasil dihapus")
     }
 
     return (
@@ -38,7 +35,6 @@ export default function CartListItems(props) {
                     <FaTrash />
                 </button>
             </div>
-            <Toaster position='top-center' />
         </article>
     )
 }

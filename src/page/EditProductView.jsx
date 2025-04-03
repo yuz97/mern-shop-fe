@@ -5,7 +5,6 @@ import Loading from '../components/Loading'
 import FormSelect from '../components/Form/FormSelect'
 import FormInput from '../components/Form/FormInput'
 import FormTextArea from '../components/Form/FormTextArea'
-import toast, { Toaster } from 'react-hot-toast'
 
 export default function EditProductView() {
     const [product, setProduct] = useState(null)
@@ -33,11 +32,9 @@ export default function EditProductView() {
                 category: data.category,
             })
 
-            toast.success("produk berhasil diupdate")
             navigate('/products')
         } catch (error) {
             const errMessage = error?.response?.data?.message
-            toast.error(errMessage)
         }
 
     }
@@ -59,7 +56,6 @@ export default function EditProductView() {
                         <FormInput name="stock" defaultValue={product.stock} label="stok produk" type="number" />
                         <FormTextArea name="description" defaultValue={product.description} label="deskripsi produk" />
                         <input type="submit" value="Update" className='btn btn-primary btn-block mt-5 btn-md' />
-                        <Toaster position='top-center' />
                     </form> : <Loading />
             }
         </>

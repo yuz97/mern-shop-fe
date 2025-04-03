@@ -6,7 +6,6 @@ import { useEffect } from 'react'
 import { Api } from '../api'
 import { clearCartItem } from '../features/cartSlice'
 import { redirect, useNavigate } from 'react-router-dom'
-import { toast, Toaster } from 'react-hot-toast'
 
 const snapScript = () => {
     return new Promise((resolve) => {
@@ -24,7 +23,6 @@ export const loader = (storage) => () => {
     const user = storage.getState().userState.user
 
     if (!user) {
-        toast.error("login untuk akses halaman ini")
         return redirect('/login')
     }
     return null
@@ -81,11 +79,9 @@ export default function CheckoutView() {
                 }
             })
 
-            toast.success("midtrans berhasil")
 
         } catch (error) {
             const errMessage = error?.response?.data?.message
-            toast.error(errMessage)
         }
 
 
@@ -114,7 +110,6 @@ export default function CheckoutView() {
                     <CartTotal />
                 </div>
             </div>
-            <Toaster position='top-center' />
         </>
     )
 }
