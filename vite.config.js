@@ -14,9 +14,9 @@ export default defineConfig({
       },
     },
   },
-  build: {
-    rollupOptions: {
-      external: ["react-hot-toast"],
-    },
-  },
+  // build: {
+  //   rollupOptions: {
+  //     external: ["react-hot-toast"],
+  //   },
+  // },
 });
