@@ -5,7 +5,7 @@ import { FaPlus } from 'react-icons/fa'
 import { genSelectAmount, numberFormat } from "../utils"
 import { useDispatch } from 'react-redux'
 import { addItem } from "../features/cartSlice"
-import toast, { Toaster } from "react-hot-toast";
+import { toast, Toaster } from "react-hot-toast";
 
 
 const DetailProduct = () => {
@@ -78,7 +78,7 @@ const DetailProduct = () => {
                 }
             </div>
         </div>
-            <Toaster />
+            <Toaster position="top-center" />
         </>
     )
 }

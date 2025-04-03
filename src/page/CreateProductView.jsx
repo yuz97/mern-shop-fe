@@ -2,7 +2,7 @@ import React from 'react'
 import FormSelect from '../components/Form/FormSelect'
 import FormInput from '../components/Form/FormInput'
 import FormTextArea from '../components/Form/FormTextArea'
-import toast, { Toaster } from 'react-hot-toast'
+import { toast, Toaster } from 'react-hot-toast'
 import { useNavigate, redirect } from 'react-router-dom'
 import { Api } from '../api'
 
