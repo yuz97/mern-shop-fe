@@ -16,7 +16,7 @@ export const loader = (storage) => async () => {
 
 export default function OrderView() {
     const { orders } = useLoaderData()
-    if (!orders.length) {
+    if (!orders || !orders.length) {
         return (
             <h1 className="text-center text-primary font-bold text-3xl border-b border-secondary py-3">Order is empty</h1>
         )
